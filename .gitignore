@@ -1,3 +1,40 @@
 build/bin
 node_modules
 frontend/dist
+
+# Go related
+/go.sum
+/go.mod
+/vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Wails build artifacts
+build/
+wailsjs/
+frontend/dist/
+frontend/node_modules/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Dependency files
+.env
+.env.*
+
