@@ -1,54 +1,109 @@
-# React + TypeScript + Vite
+Absolutely! Here's a complete `README.md` tailored for your **frontend-only project** using:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- ✅ React + Vite
+- ✅ Tailwind CSS
+- ✅ ShadCN UI
+- ✅ TanStack Table
+- ✅ Uses either `npm` or `pnpm`
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧑‍💻 Frontend Only - React + Tailwind + ShadCN + TanStack Table
 
-## Expanding the ESLint configuration
+This is a frontend-only setup for building a responsive UI with:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚡ Vite + React (TypeScript)
+- 🎨 Tailwind CSS
+- 🧩 ShadCN UI (Radix-based components)
+- 📊 TanStack Table (React Table)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🛠️ Prerequisites
+
+Make sure you have:
+
+- **Node.js** ≥ 18.x  
+- **pnpm** (recommended) or npm
+
+Install `pnpm` globally (optional but faster than npm):
+
+```bash
+npm install -g pnpm
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Install Dependencies
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm install
+# OR
+npm install
 ```
+
+---
+
+## 🚀 Run Dev Server
+
+```bash
+pnpm dev
+# OR
+npm run dev
+```
+
+Visit: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🏗️ Build for Production
+
+```bash
+pnpm build
+# OR
+npm run build
+```
+
+Output will be in the `dist/` folder.
+
+---
+
+## 🧪 Preview Production Build
+
+```bash
+pnpm preview
+# OR
+npm run preview
+```
+
+
+## 🎨 Using ShadCN UI
+
+If not initialized yet, run:
+
+```bash
+pnpm dlx shadcn-ui@latest init
+```
+
+Then add components:
+
+```bash
+pnpm dlx shadcn-ui@latest add button
+pnpm dlx shadcn-ui@latest add table
+```
+
+Customize config in `tailwind.config.ts` and `components.json`.
+
+---
+
+## 📊 Using TanStack Table
+
+Install:
+
+```bash
+pnpm add @tanstack/react-table
+# OR
+npm install @tanstack/react-table
+```
+
+
