@@ -1,19 +1,60 @@
 # README
 
-## About
+Sure! Here's a focused `README.md` for your **Go backend using Wails only**, assuming you're using it to build native desktop apps **without a frontend framework like React/Vue** or you're treating frontend separately.
 
-This is the official Wails Vanilla template.
+---
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+## 🐹 Wails Backend Only (Go)
 
-## Live Development
+This project is a **Go-based desktop GUI app** using [Wails](https://wails.io). Wails enables you to build cross-platform desktop apps using Go on the backend and optionally web technologies on the frontend.
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
+---
 
-## Building
+## 📦 Prerequisites
 
-To build a redistributable, production mode package, use `wails build`.
+Make sure you have:
+
+- **Go** ≥ 1.20  
+- **Wails CLI**  
+- **Node.js** (for frontend builds, if needed)
+
+### ✅ Install Wails CLI
+
+```bash
+go install github.com/wailsapp/wails/v2/cmd/wails@latest
+```
+
+Make sure your `$GOPATH/bin` is in your system `PATH`.
+
+---
+
+---
+
+## 🚀 Run in Dev Mode
+
+```bash
+wails dev
+```
+
+This builds your app and launches it with hot-reload (if using a frontend).
+
+---
+
+## 🏗 Build Native App
+
+```bash
+wails build
+```
+
+
+
+## 🧰 Useful Commands
+
+| Command        | Description                      |
+|----------------|----------------------------------|
+| `wails dev`    | Start dev mode with hot reload   |
+| `wails build`  | Build production binary          |
+| `wails generate bindings` | Regenerate frontend bindings (if used) |
+
+---
+
