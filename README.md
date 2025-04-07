@@ -1,9 +1,3 @@
-# README
-
-Sure! Here's a focused `README.md` for your **Go backend using Wails only**, assuming you're using it to build native desktop apps **without a frontend framework like React/Vue** or you're treating frontend separately.
-
----
-
 ## 🐹 Wails Backend Only (Go)
 
 This project is a **Go-based desktop GUI app** using [Wails](https://wails.io). Wails enables you to build cross-platform desktop apps using Go on the backend and optionally web technologies on the frontend.
