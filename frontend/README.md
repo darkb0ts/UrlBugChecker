@@ -1,4 +1,3 @@
-Absolutely! Here's a complete `README.md` tailored for your **frontend-only project** using:
 
 - ✅ React + Vite
 - ✅ Tailwind CSS
