@@ -3,7 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"net/http"
+
+	"Mywails/internal/handlers"
 )
 
 // App struct
@@ -28,17 +29,8 @@ func (a *App) Greet(name string) string {
 }
 
 
-func (a *App) SendRequest(url string) map[string]string {
-	resp, err := http.Get(url)
-	if err != nil {
-		return map[string]string{
-			"status": "❌ Error: " + err.Error(),
-		}
-	}
-	defer resp.Body.Close()
-
-	return map[string]string{
-		"status": fmt.Sprintf("%d %s", resp.StatusCode, http.StatusText(resp.StatusCode)),
-	}
+func (a *App) SendRequest(requestUrl string) map[string]string {
+	result := handlers.SingleCheckUrl(requestUrl)
+	return result
 }
 

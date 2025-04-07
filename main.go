@@ -1,27 +1,29 @@
+// backend/main.go
 package main
 
 import (
 	"embed"
+	"log"
 
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
+	// This import path may vary depending on your module name
 )
 
-//go:embed all:frontend/dist
-var assets embed.FS
+var Assets embed.FS
 
 func main() {
-	// Create an instance of the app structure
+	// Initialize app
 	app := NewApp()
 
-	// Create application with options
+	// Run the Wails app
 	err := wails.Run(&options.App{
 		Title:  "Bug Flow",
 		Width:  1024,
 		Height: 768,
 		AssetServer: &assetserver.Options{
-			Assets: assets,
+			Assets: Assets, // Use exported variable from app.go
 		},
 		BackgroundColour: &options.RGBA{R: 27, G: 38, B: 54, A: 1},
 		OnStartup:        app.startup,
@@ -31,6 +33,6 @@ func main() {
 	})
 
 	if err != nil {
-		println("Error:", err.Error())
+		log.Fatal("Error:", err)
 	}
 }
