@@ -32,7 +32,6 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
-// import { sendRequest } from "@/lib/send-request"
 import { SendRequest } from "../../wailsjs/go/main/App";
 import {
   Plus,
@@ -61,9 +60,6 @@ interface RowData {
 
 const URLTable = () => {
   const [data, setData] = useState<RowData[]>([
-    { url: "https://example.com", status: "Pending" },
-    { url: "https://example.org", status: "Pending" },
-    { url: "https://www.mapeitsolutions.com/prasanna", status: "Pending" },
   ]);
   const [newUrl, setNewUrl] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -223,6 +219,7 @@ const URLTable = () => {
   });
 
   const handleSendRequest = async (index: number) => {
+    console.log(index);
     const url = data[index].url;
     try {
       const startTime = performance.now();
@@ -335,8 +332,6 @@ const URLTable = () => {
       completed++;
       setProgress(Math.round((completed / total) * 100));
       setData([...newData]);
-
-      // Small delay to prevent overwhelming the browser
       await new Promise((resolve) => setTimeout(resolve, 100));
     }
 

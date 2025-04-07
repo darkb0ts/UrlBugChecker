@@ -1,34 +1,38 @@
-// import ThemeToggle from './components/ThemeToggle';
-// import URLTable from './components/URLTable'; // <- new component
+// import URLTable from "./components/URLTable"; // <- new component
+// import { Navbar } from "@/components/navbar";
 
 // function App() {
 //   return (
-//     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 text-black dark:text-white">
-//       <div className="flex flex-col items-center justify-start py-10 gap-10">
-//         <ThemeToggle />
-//         <div className="w-full max-w-4xl px-4">
+//     <div className="min-h-screen bg-background text-foreground">
+//       <Navbar />
+//       <main className="container mx-auto py-6 px-4">
+//         <div className="w-full max-w-6xl mx-auto">
 //           <URLTable />
 //         </div>
-//       </div>
+//       </main>
 //     </div>
 //   );
 // }
 
 // export default App;
 
-import URLTable from "./components/URLTable"; // <- new component
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "@/components/navbar";
+import Home from "./pages/Home"; // Create these pages
+import BugFlow from "./pages/BugFlow";
+import Setting from "./pages/Setting";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <BrowserRouter>
       <Navbar />
-      <main className="container mx-auto py-6 px-4">
-        <div className="w-full max-w-6xl mx-auto">
-          <URLTable />
-        </div>
-      </main>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<BugFlow />} />
+        <Route path="/settings" element={<Setting />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

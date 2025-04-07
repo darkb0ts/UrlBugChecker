@@ -1,5 +1,6 @@
 import ThemeToggle from "@/components/ThemeToggle";
 import { Globe } from "lucide-react";
+import { Link } from "react-router-dom"; // Import Link
 
 export function Navbar() {
   return (
@@ -10,24 +11,24 @@ export function Navbar() {
           <span className="text-lg font-semibold">URL Request App</span>
         </div>
         <nav className="flex items-center gap-6">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/dashboard"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Dashboard
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/settings"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Settings
-          </a>
+          </Link>
           <ThemeToggle />
         </nav>
       </div>
